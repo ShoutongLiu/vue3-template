@@ -12,10 +12,10 @@ export default defineConfig({
     vue(),
     // elementPlus 自动按需引入
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()]
     }),
     // gzip压缩 生产环境生成 .gz 文件
     viteCompression({
@@ -23,8 +23,9 @@ export default defineConfig({
       disable: false,
       threshold: 10240,
       algorithm: 'gzip',
-      ext: '.gz',
-    })],
+      ext: '.gz'
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
@@ -44,8 +45,8 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 8080,
     open: true, // 自动打开浏览器
-    cors: true,  //允许跨域
-  },
+    cors: true // 允许跨域
+  }
   // 设置代理，根据我们项目实际情况配置
   // proxy: 'http://xxx.xxx.xxx.xxx:8000',
 })

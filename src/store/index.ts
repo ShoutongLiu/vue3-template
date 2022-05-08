@@ -1,19 +1,21 @@
 import { defineStore } from 'pinia'
 
-export const store = defineStore({
+const store = defineStore({
   id: 'main',
   state: () => ({
     name: 'tom'
   }),
   // getters
   getters: {
-    nameLength: (state) => state.name.length,
+    nameLength: (state: { name: string }) => state.name.length
   },
   actions: {
     async insertPost(data: string) {
       // 可以做异步
       // await doAjaxRequest(data);
-      this.name = data;
+      ;(this as any).name = data
     }
   }
 })
+
+export default store
